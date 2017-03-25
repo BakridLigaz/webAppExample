@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Web Development Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="Keywords" content="Web, разработка сайтов, создание">
+    <meta name="Description" content="Разработка и создание сайтов">
+    <meta name="Author" content="Samoylov Oleg">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="stylesheets/libs.min.css" rel="stylesheet">
+    <link href="stylesheets/libs/font-awesome.min.css" rel="stylesheet">
+    <link href="stylesheets/libs/animate.css" rel="stylesheet">
+    <link href="stylesheets/libs/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="javascripts/libs.min.js"></script>
+</head>
+<body ng-controller="MainCtrl" ng-cloak>
+<div class="code-background"></div>
+<div class="preloader" preloader>
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+<div id="menu" sticky-navigation>
+    <div class="open-menu" open-menu="">{{languagePack.buttons.menu}}<span></span>
+    </div>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="#about_us" du-smooth-scroll="" >{{languagePack.headers.aboutUs}}</a></li>
+            <li><a href="#working_process" du-smooth-scroll="" >{{languagePack.headers.workCond}}</a></li>
+            <li><a href="#portfolio" du-smooth-scroll="" >{{languagePack.headers.portfolio}}</a></li>
+            <li><a href="#contacts" du-smooth-scroll="">{{languagePack.headers.contacts}}</a></li>
+        </ul>
+    </nav>
+    <nav class="navigation-menu">
+        <ul>
+            <li><a href="#about_us" du-smooth-scroll="" >{{languagePack.headers.aboutUs}}</a></li>
+            <li><a href="#working_process" du-smooth-scroll="" >{{languagePack.headers.workCond}}</a></li>
+            <li><a href="#portfolio" du-smooth-scroll="" >{{languagePack.headers.portfolio}}</a></li>
+            <li><a href="#contacts" du-smooth-scroll="">{{languagePack.headers.contacts}}</a></li>
+        </ul>
+    </nav>
+    <div class="change-language" ng-click="changeLanguage()">{{language}}</div>
+</div>
+<div class="container">
+    <div ng-include="'templates/header_tmp.html'" id="head"></div>
+    <div class="section-header" id="about_us"><h3>{{languagePack.headers.aboutUs}}</h3></div>
+    <div ng-include="'templates/about_tmp.html'"></div>
+    <div class="section-header" id="portfolio"><h3>{{languagePack.headers.portfolio}}</h3></div>
+    <div ng-include="'templates/portfolio_tmp.html'"></div>
+    <div class="section-header" id="working_process"><h3>{{languagePack.headers.workCond}}</h3></div>
+    <div ng-include="'templates/steps_tmp.html'"></div>
+    <footer id="contacts">
+        <div class="contacts">
+            <div class="paper-background"></div>
+            <div class="content">
+                <p>{{languagePack.sendForm.contactUs}}</p>
+                <p>{{languagePack.sendForm.desc}}</p>
+                <form name="sendForm" novalidate>
+                    <input type="text" name="name" placeholder="{{languagePack.sendForm.plName}}" ng-model="user.name" minlength="3" maxlength="50" required>
+                    <p class="error">
+                        <span ng-show="sendForm.name.$error.minlength&&sendForm.name.$dirty">{{languagePack.validMessages.invalidName}}</span>
+                        <span ng-show="sendForm.name.$error.required&&sendForm.name.$dirty">{{languagePack.validMessages.notName}}</span>
+                    </p>
+                    <input type="email" name="email" placeholder="{{languagePack.sendForm.plEmail}}" ng-model="user.email" required>
+                    <p class="error">
+                        <span ng-show="sendForm.email.$error.email">{{languagePack.validMessages.invalidEmail}}</span>
+                        <span ng-show="sendForm.email.$error.required&&sendForm.email.$dirty">{{languagePack.validMessages.notEmail}}</span>
+                    </p>
+                    <input type="text" placeholder="{{languagePack.sendForm.plPhone}}" name="phone" id="phone" ng-mask-phone="" ng-model="user.phone" required>
+                    <p class="error">
+                    </p>
+                    <input type="text" placeholder="{{languagePack.sendForm.plMessage}}" name="message" ng-model="user.message" required>
+                    <p class="error">
+                        <span ng-show="sendForm.message.$error.required&&sendForm.message.$dirty">{{languagePack.validMessages.notMessage}}</span>
+                    </p>
+                    <button ng-disabled="sendForm.$invalid" ng-click="send(user)">{{languagePack.buttons.send}}</button>
+                </form>
+                <div ng-include="'templates/send_message_tmp.html'" id="send" style="display: none"></div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="paper-background">
+            </div>
+            <div class="smile">
+                <a href="#head" du-smooth-scroll="" du-scrollspy=""><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="copyright-footer">
+                <div class="share"><div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,skype" data-image="images/share.png"></div></div>
+                <p>&copy; 2017 Ukraine | Zaporozhye | Web Development Agency | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+</body>
+</html>

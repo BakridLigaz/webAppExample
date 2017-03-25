@@ -1,0 +1,11 @@
+<div class="steps">
+    <ul class="skills">
+        <li ng-repeat="step in steps">
+            <div class="skill-item">
+                <span class="number-step">{{step.id}}<p><i class="{{step.icon_class}}" aria-hidden="true"></i></p></span>
+                <h5>{{language=="ru"?step.title_ru:step.title_en}}</h5>
+                <p class="info-step">{{language=="ru"?step.description_ru:step.description_en}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

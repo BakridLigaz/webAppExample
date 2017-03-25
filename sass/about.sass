@@ -1,0 +1,93 @@
+.about
+
+  position: relative
+  padding: 0
+  margin: 0
+  text-align: center
+
+  h3
+    color: #46b4b4
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.5)
+    font-size: 30px
+    margin: 0
+
+ul.skills
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+  justify-content: space-between
+  padding: 0
+  list-style-type: none
+  li
+    background: #FFFFF0
+    box-shadow: 0 0 20px rgba(0,0,0,0.5)
+    flex: 1
+    margin: 10px
+    p.info-step
+      opacity: 0
+      transition: all linear 0.3s
+    &:hover
+      box-shadow: 0 0 60px rgba(0,0,0,0.7)
+      transform: rotate(1deg)
+      p.info-step
+        opacity: 1
+    h5
+      text-transform: uppercase
+      font-size: 30px
+    i
+      font-size: 20px
+      color: green
+    i.neg
+      color: red
+    span.number-step
+      font-size: 60px
+      p
+        margin: 5% 0
+      i
+        color: #46b4b4
+        font-size: 100px
+
+.skill-item
+  padding: 10%
+  text-align: center
+
+.steps
+  margin-bottom: 5%
+
+@media all and (max-width: 1200px)
+  ul.skills
+    li
+      h5
+        font-size: 27px
+  span.number-step
+    font-size: 90px
+
+@media all and (max-width: 950px)
+  ul.skills
+    li
+      h5
+        font-size: 24px
+  span.number-step
+    font-size: 80px
+
+
+@media all and (max-width: 800px)
+  ul.skills
+    li
+      h5
+        font-size: 20px
+  span.number-step
+    font-size: 70px
+
+
+@media all and (max-width: 720px)
+  ul.skills
+    li
+      h5
+        font-size: 18px
+  span.number-step
+    font-size: 60px
+
+
+

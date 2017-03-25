@@ -1,1 +1,14 @@
-<div>portfolio</div>
+<div class="projects">
+    <div ng-repeat="project in projects"><div class="project-content">
+        <div class="project-background" project-background="{{project.images[0].src}}"></div>
+        <div class="hover-project">
+            <p>{{languagePack.projectInfo.client}}: <span class="info">{{project.client}}</span></p>
+            <p>{{languagePack.projectInfo.date}}: <span class="info">{{project.date|date : "dd.MM.y" }}</span></p>
+            <p>{{languagePack.projectInfo.skills}}: <span ng-repeat="skill in project.skills" class="info">#{{skill}} </span></p>
+            <p>{{languagePack.projectInfo.site}}: <span class="info"><a href="{{project.site}}" target="_blank">{{project.site}}</a></span></p>
+            <p ng-show="project.note_ru">{{languagePack.projectInfo.note}}: <span class="info">{{language=="ru"?project.note_ru:project.note_en}}</span></p>
+            <button class="view-project" ng-click="openLightbox(project.images)">{{languagePack.buttons.view}}</button>
+        </div>
+    </div>
+    </div>
+</div>

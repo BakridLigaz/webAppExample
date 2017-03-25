@@ -1,26 +1,20 @@
 <div class="about">
-    <div class="about-item about-item-first">
-        <div class="content">
-            <h3>Кто мы?</h3>
-            <p>Мы молодая, амбициозная, но уже достаточно опытная команда специалистов
-                предлагаем Вам свои услуги в сфере веб-разработки
-            </p>
-        </div>
-    </div>
-    <div class="about-item">
-        <div class="content">
-            <h3>Что мы делаем?</h3>
-            <ul>
-                <li>Потрясающие лендинги</li>
-
-                <li>Веб-приложения разной сложности, начиная от игр и заканчивая различными конфигурационными программами с вычислительной локикой</li>
-
-            </ul>
-        </div>
-    </div>
-    <div class="about-item">
-        <div class="content">
-            <h3>Что мы НЕделаем?</h3>
-        </div>
-    </div>
+    <h3>{{languagePack.aboutUsHeader.do}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></h3>
+    <ul class="skills">
+        <li ng-repeat="skill in doList|filter:{'do':0}">
+            <div class="skill-item">
+                <h5><i class="fa fa-check" aria-hidden="true"></i> {{language=="ru"?skill.title_ru:skill.title_en}}</h5>
+                <p class="info-step">{{language=="ru"?skill.description_ru:skill.description_en}}</p>
+            </div>
+        </li>
+    </ul>
+    <h3>{{languagePack.aboutUsHeader.notDo}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></h3>
+    <ul class="skills">
+        <li ng-repeat="skill in doList|filter:{'do':1}">
+            <div class="skill-item">
+                <h5><i class="fa fa-times neg" aria-hidden="true"></i> {{language=="ru"?skill.title_ru:skill.title_en}}</h5>
+                <p class="info-step">{{language=="ru"?skill.description_ru:skill.description_en}}</p>
+            </div>
+        </li>
+    </ul>
 </div>

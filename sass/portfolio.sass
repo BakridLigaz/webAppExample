@@ -1,0 +1,54 @@
+.projects
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+  justify-content: space-between
+  //min-height: 300px
+  box-shadow: 0 0 20px rgba(0,0,0,0.5)
+  div
+    .project-background
+      z-index: -1
+
+
+  .project-content
+    position: relative
+    min-width: 280px
+    min-height: 300px
+    height: 100%
+    overflow: hidden
+    span.info
+      color: #46b4b4
+      a
+        color: #46b4b4
+        text-decoration: none
+    button.view-project
+      transition: all linear 0.1s
+      outline: none
+      height: 40px
+      width: 150px
+      color: #31291c
+      background: transparent
+      border: 2px solid #31291c
+      font-family: 'B52', arial
+      font-size: 15px
+      text-transform: uppercase
+      cursor: pointer
+      &:hover
+        background: #31291c
+        color: #c7c1b1
+        transform: rotate(-5deg)
+
+    .hover-project
+      opacity: 0
+      top: 0
+      padding: 10%
+      text-transform: uppercase
+      transition: opacity linear 0.3s
+    &:hover
+      background: rgba(240, 217, 62, 0.7)
+      //box-shadow: 0 0 30px rgba(0,0,0,0.7)
+      .hover-project
+        opacity: 1
+      .project-background
+        background-size: 700px

@@ -1,0 +1,41 @@
+{
+  "headers": {
+    "aboutUs": "About us",
+    "portfolio": "Portfolio",
+    "workCond": "Working conditions",
+    "contacts": "Contacts"
+  },
+  "projectInfo": {
+    "client": "client",
+    "site": "site",
+    "date": "date",
+    "latest": "latest",
+    "note": "note",
+    "skills":"skills"
+  },
+  "buttons": {
+    "menu": "MENU",
+    "view": "view details",
+    "send": "send"
+  },
+  "sendForm": {
+    "contactUs": "CONTACT US",
+    "desc": "Write to us and we will contact you in the next 24 hours",
+    "plName": "NAME",
+    "plPhone": "PHONE",
+    "plMessage":"MESSAGE",
+    "plEmail":"EMAIL"
+  },
+  "aboutUsHeader": {"do":"What are we doing?","notDo":"What we do NOT do?"},
+  "validMessages": {
+    "notName": "Enter your name",
+    "notEmail": "Enter your email",
+    "notMessage": "Enter message",
+    "invalidName": "Incorrect name",
+    "invalidEmail":"Incorrect email"
+  },
+  "sendRequests":{
+    "notSend":"Message not send",
+    "send":"Message send"
+  }
+}

@@ -1,0 +1,39 @@
+<header>
+    <div class="logo">
+        <div class="paper-background"></div>
+        <div class="logo-content">
+            <h1><p>Web</p>
+                <p>Development</p>
+                <p>Agency</p>
+            </h1>
+            <div class="left-head-footer">
+                <div class="social-bar">
+                    <a href="skype:ligaz2403?chat"><i class="fa fa-skype fa-fw" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+                    <a href="https://vk.com/samoylov.oleg" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                </div>
+                <div class="go-mail">
+                    <span class="mail">web-development-agency@mail.ru</span> <a href="mailto:ligaz2403@yandex.ru" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="latest">
+        <div class="paper-background"></div>
+        <div class="info-latest">
+            <p><b>{{languagePack.projectInfo.latest}}</b></p>
+            <p>{{languagePack.projectInfo.client}}: <span class="info">{{latestProject.client}}</span></p>
+            <p>{{languagePack.projectInfo.date}}: <span class="info">{{latestProject.date|date : "dd.MM.y" }}</span></p>
+            <p>{{languagePack.projectInfo.skills}}: <span ng-repeat="skill in latestProject.skills" class="info">#{{skill}} </span></p>
+            <p>{{languagePack.projectInfo.site}}: <span class="info"><a href="{{latestProject.site}}" target="_blank">{{latestProject.site}}</a></span></p>
+            <p ng-show="latestProject.note_ru">{{languagePack.projectInfo.note}}: <span class="info">{{language=="ru"?latestProject.note_ru:latestProject.note_en}}</span></p>
+            <button class="view-project" ng-click="openLightbox(latestProject.images)">{{languagePack.buttons.view}}</button>
+        </div>
+        <div class="preview-latest" >
+            <img class="monitor" src="images/backgrounds/monitor_sketch2.png">
+            <a data-fancybox data-src="{{latestProject.images[0].src}}" href="javascript:;">
+            <img class="preview" src="{{latestProject.images[0].src}}" style="cursor: pointer">
+            </a>
+        </div>
+    </div>
+</header>
